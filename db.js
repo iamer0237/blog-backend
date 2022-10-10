@@ -1,7 +1,11 @@
-[{
-    "blog_id":1,
-    "blog_title": "",
-    "blog_body": "",
-    "blog_image": ""
-  }
-]
+const { Pool, Client } = require("pg");
+
+const connectionString = process.env.CONNECTION_STRING;
+
+const pool = new Pool({
+  connectionString,
+});
+
+module.exports = {
+  pool,
+};
